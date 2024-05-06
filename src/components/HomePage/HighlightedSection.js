@@ -1,5 +1,5 @@
 "use client"
-import FirstDesign from "./HighlightedSectionComponent/FirstDesign";
+import FirstDesign from "./FirstDesign";
 import SecondDesign from "./HighlightedSectionComponent/SecondDesign";
 
 function HighlightedSection(){

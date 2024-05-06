@@ -1,0 +1,28 @@
+"use client"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+
+function IndividualItem(props){
+    const {imgURL,title,rating,review,price} = props
+    return (
+        <div className="px-2 shadow-xl hover:shadow-2xl">
+            <div className="my-4">
+            <img src={imgURL} className="h-44 w-96 px-4" ></img>
+            </div>
+            <div className="w-64 text-gray-600 text-left pl-4 mb-1">
+                <p>{title}</p>
+            </div>
+            <div className='text-gray-600 text-left pl-4 mb-1'>
+                <span>
+                    {rating}
+                </span>
+                <FontAwesomeIcon icon={faStar} className='text-red-600 px-1' />
+                <span>
+                   | ({review})
+                </span>
+            </div>
+            <div className="text-gray-600 text-left pl-4 mb-2">{price}</div>
+        </div>
+    )
+}
+export default IndividualItem;
