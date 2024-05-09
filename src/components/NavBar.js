@@ -4,13 +4,13 @@ import Link from "next/link";
 
 function NavBar(){
     return (
-       <div className="px-6 mx-20 my-4 flex flex-wrap">
+       <div className="w-full my-4 flex">
          <div className="bg-black border-2 border-double border-white min-w-44 min-h-12">
             <h1 className="text-white px-2 py-1 font-bold font-sans text-center text-3xl">Ur's Store</h1>
          </div>
          <div className="w-4/5 text-white">
             <nav className="bg-gradient-to-r from-gray-400 to-black">
-                <ul className="flex flex-1 justify-end max-h-7 my-2.5">
+                <ul className="flex flex-wrap justify-end max-h-7 my-2.5">
                     <li className="px-4 py-1">
                         <Link className="mb-2" href={'/'}>Home</Link>
                     </li>

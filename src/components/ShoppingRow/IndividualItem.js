@@ -5,9 +5,9 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 function IndividualItem(props){
     const {imgURL,title,rating,review,price} = props
     return (
-        <div className="px-2 shadow-xl hover:shadow-2xl">
+        <div className="px-2 shadow-xl flex-auto basis-1/4 hover:shadow-2xl">
             <div className="my-4">
-            <img src={imgURL} className="h-44 w-96 px-4" ></img>
+            <img src={imgURL} className="h-52 w-96 px-4"></img>
             </div>
             <div className="w-64 text-gray-600 text-left pl-4 mb-1">
                 <p>{title}</p>

@@ -4,7 +4,7 @@ import SecondDesign from "./HighlightedSectionComponent/SecondDesign";
 
 function HighlightedSection(){
     return(
-        <>
+        <div className="my-4">
             <FirstDesign
                 title="Running Sports Shoes"
                 description="Handpicked collection of vibrant running shoes."
@@ -18,7 +18,7 @@ function HighlightedSection(){
                 imageUrl="/Images/tshirt.jpg"
                 style="h-96 w-max"
             />
-        </>
+        </div>
 
     )
 }

@@ -3,7 +3,7 @@ import Button from "@/components/Buton"
 
 function ExclusiveProduct(){
     return (
-        <div className="bg-gradient-to-r from-gray-500 to-black text-white flex w-full mt-4 px-48">
+        <div className="bg-gradient-to-l from-black to-gray-700 text-white flex w-full mt-4 px-48">
             <div className="py-16">
                     <img src="/Images/nord.jpg" className="h-full w-9/12 px-4 opacity-75"></img>
             </div>

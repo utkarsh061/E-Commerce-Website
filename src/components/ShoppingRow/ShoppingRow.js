@@ -7,12 +7,12 @@ function ShoppingRow(props){
     const {heading,isSpecialEdition} = props
     const data = isSpecialEdition ? specialEdition: newArrival
     return(
-        <div className="mt-6  grid text-center">
-            <div className="w-96 justify-self-center">
-                <h2 className="font-extrabold text-4xl">{heading}</h2>
+        <div>
+            <div className="justify-self-center">
+                <h2 className="font-extrabold text-4xl text-center">{heading}</h2>
                 <div class="bg-red-600 border-solid text-red-600 h-2 text-xs rounded">*</div>
             </div>
-            <div className="flex mx-52 my-8">
+            <div className="flex flex-wrap my-8">
                 {data?.map((item) => (
                     <IndividualItem
                         key={item.id}
