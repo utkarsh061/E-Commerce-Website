@@ -21,7 +21,7 @@ function NavBar(){
                          <Link href={'/about'}>About</Link>
                     </li>
                     <li className="px-4 py-1">
-                        <Link href={'/'}>Contact</Link>
+                        <Link href={'/contact'}>Contact Us</Link>
                     </li>
                     <li className="px-4 py-1">
                         <Link href={'/account'}>Account</Link>

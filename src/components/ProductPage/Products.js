@@ -2,8 +2,15 @@
 import {products} from "./AllProductsConstant";
 import IndividualItem from "../ShoppingRow/IndividualItem";
 import Link from "next/link";
+import { setIndividualPageItem } from "@/app/redux/applicationSlice";
+import { useDispatch } from "react-redux";
 
 function Products(){
+    const dispatch = useDispatch();
+    const handleClick = (item) => {
+        dispatch(setIndividualPageItem(item))
+    }
+
     return (
         <div className="my-4">
             <div className="flex flex-wrap">
@@ -15,6 +22,7 @@ function Products(){
                             rating={item.rating}
                             review={item.review}
                             price={item.price}
+                            handleClick={() => handleClick(item)}
                         />
                     ))}
             </div>

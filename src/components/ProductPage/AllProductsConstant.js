@@ -2,7 +2,7 @@ export const products = [
     {
         id:1,
         imgURL:"/Images/red.jpg",
-        title: "JBL Bluetooth Speakers",
+        title: "WROGN Men Red Shirt",
         rating:"4.2",
         review:"25",
         price:"Rs 999.00"
@@ -53,7 +53,7 @@ export const products = [
         title: "Puma Shoes",
         rating:"3.5",
         review:"150",
-        price:"Rs 1, 599.00"
+        price:"Rs 1,599.00"
     },
     {
         id:8,
