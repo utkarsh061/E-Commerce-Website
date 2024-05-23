@@ -1,18 +1,45 @@
 "use client"
 
+import IndividualItem from "@/components/ShoppingRow/IndividualItem";
 import SingleProductInfo from "@/components/SingleProduct/singleProductSection";
+import Link from "next/link";
 import { useSelector } from "react-redux";
+import { newArrival } from "@/components/ShoppingRow/shoppingItemConstant.js"
+
 
 function SingleProduct(){
     const applicationData = useSelector((state) => state.application)
     const { individualPageItem} = applicationData
     return(
-        <div className="mx-64 my-12 flex flex-col">
+        <>
             <SingleProductInfo
                 individualPageItem={individualPageItem}
             />
-            <div>2</div>
-        </div>
+            <div className="mx-52 my-12">
+                <div className="flex">
+                    <div className="basis-1/2 font-bold text-2xl"><h1>More Products</h1></div>
+                    <div className="basis-1/2 flex justify-end">
+                        <Link href={"/products"}>
+                            View More
+                        </Link>
+                    </div>
+                </div>
+                <div>
+                    <div className="flex flex-wrap my-8">
+                    {newArrival?.map((item) => (
+                        <IndividualItem
+                            key={item.id}
+                            imgURL={item.imgURL}
+                            title={item.title}
+                            rating={item.rating}
+                            review={item.review}
+                            price={item.price}
+                        />
+                    ))}
+                </div>
+                </div>
+            </div>
+        </>
     )
 }
 
