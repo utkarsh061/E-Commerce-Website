@@ -20,7 +20,7 @@ function CartPage(){
             sum=sum+amount;
         })
         let result = `Rs ${sum.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        let tax= sum*0.18
+        let tax= sum*0.01
         let taxAmount = `Rs ${tax.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
         let totalAmount = `Rs ${(tax+sum).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
         setSubTotal(result)
@@ -51,10 +51,10 @@ function CartPage(){
         ]
         dispatch(setCartItems(updatedCartItems))
     }
-    const handleRemoveClick = (id) => {
+    const handleRemoveClick = (index) => {
         let data=[]
-        data=cartItems?.filter((item) => (
-            item.id != id
+        data=cartItems?.filter((item,key) => (
+            key != index
         ))
         dispatch(setCartItems(data))
     }
@@ -65,16 +65,19 @@ function CartPage(){
                 <h1 className="basis-1/5">Quantity</h1>
                 <h1 className="basis-1/5">Subtotal</h1>
             </div>
-            {cartItems?.map((item) => {
+            {cartItems?.map((item,index) => {
                 return (
                     <div className="flex">
                         <div className="basis-3/5 flex">
                             <img src={item.imgURL} className="w-24 h-24 my-1 mx-2"></img>
                             <div className="flex-col justify-center my-4">
-                                <h2>{item.title}</h2>
+                                <div className="flex">
+                                    <h2>{item.title}</h2>
+                                    <h3 className="ml-1">({item.categorySelected})</h3>   
+                                </div>
                                 <h3>{item.price}</h3>
                                 <p className="text-red-600 hover:cursor-pointer"
-                                onClick={() => handleRemoveClick(item.id)}
+                                onClick={() => handleRemoveClick(index)}
                                 >Remove</p>
                             </div>
                         </div>
@@ -100,7 +103,7 @@ function CartPage(){
                         <p className="basis-1/2">{subTotal}</p>
                     </div>
                     <div className="mx-2 my-2 flex">
-                        <h1 className="basis-1/2">Tax(18%)</h1>
+                        <h1 className="basis-1/2">Tax</h1>
                         <p className="basis-1/2">{tax}</p>
                     </div>
                     <div className="mx-2 my-2 flex">

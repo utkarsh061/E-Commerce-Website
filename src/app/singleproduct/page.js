@@ -3,13 +3,15 @@
 import IndividualItem from "@/components/ShoppingRow/IndividualItem";
 import SingleProductInfo from "@/components/SingleProduct/singleProductSection";
 import Link from "next/link";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { newArrival } from "@/components/ShoppingRow/shoppingItemConstant.js"
+import { setIndividualPageItem } from "../redux/applicationSlice";
 
 
 function SingleProduct(){
     const applicationData = useSelector((state) => state.application)
     const { individualPageItem} = applicationData
+    const dispatch = useDispatch()
     return(
         <>
             <SingleProductInfo
@@ -34,6 +36,7 @@ function SingleProduct(){
                             rating={item.rating}
                             review={item.review}
                             price={item.price}
+                            handleClick={() => dispatch(setIndividualPageItem(item))}
                         />
                     ))}
                 </div>

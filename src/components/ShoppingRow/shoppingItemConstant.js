@@ -2,7 +2,7 @@ export const specialEdition =[
     {
         id:1,
         imgURL:"/Images/realme.png",
-        title: "Real ME 6 Pro(Lightening Orange,64 GB)",
+        title: "Real ME 6 Pro",
         rating:"4.8",
         review:"212",
         price:"Rs 17,999.00"

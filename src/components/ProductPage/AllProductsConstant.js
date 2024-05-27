@@ -16,7 +16,7 @@ export const products = [
         rating:"4.9",
         review:"151",
         price:"Rs 50,999.00",
-        category:["Upto 200 Litres","200-250","250-300","300-350","400 and above"],
+        category:["Upto 200L","200-250L","250-300L","300-350L","400L and above"],
         description:"Give your House a style upgrade with Panasonic Refrigerator.Team it with a microwave for your House."
     },
     {

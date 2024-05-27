@@ -3,16 +3,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faIndent } from '@fortawesome/free-solid-svg-icons'
 import { setCartItems } from '@/app/redux/applicationSlice'; 
 import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 
 function SingleProductInfo(props) {
   const { individualPageItem } = props;
   const { cartItems } = useSelector((state)  => state.application)
+  const [selectedCategory,setSelectedCategory] = useState("")
   const dispatch = useDispatch()
 
   const handleClick = (individualPageItem) => {
     let selectedDataObj = {...individualPageItem}
     selectedDataObj.numberOfItems = 1;
     selectedDataObj.totalItemPrice = individualPageItem.price
+    selectedDataObj.categorySelected=selectedCategory;
     let data= [];
     data.push(...cartItems)
     data.push(selectedDataObj)
@@ -33,7 +36,9 @@ function SingleProductInfo(props) {
           {individualPageItem.price}
         </h1>
         { individualPageItem.category && (
-          <select className="mt-4 px-1 py-1 rounded border border-black">
+          <select className="mt-4 px-1 py-1 rounded border border-black"
+          onChange={(e)=> setSelectedCategory(e.target.value)}
+          >
           <option value="" disabled selected>Select option</option>
             {individualPageItem?.category?.map((item) => (
               <option>{item}</option>

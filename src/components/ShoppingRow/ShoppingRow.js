@@ -1,11 +1,13 @@
 "use client"
 
+import { useDispatch } from "react-redux";
 import IndividualItem from "./IndividualItem";
 import { specialEdition,newArrival } from "@/components/ShoppingRow/shoppingItemConstant.js"
-
+import { setIndividualPageItem } from "@/app/redux/applicationSlice";
 function ShoppingRow(props){
     const {heading,isSpecialEdition} = props
     const data = isSpecialEdition ? specialEdition: newArrival
+    const dispatch = useDispatch()
     return(
         <div>
             <div className="justify-self-center">
@@ -21,6 +23,7 @@ function ShoppingRow(props){
                         rating={item.rating}
                         review={item.review}
                         price={item.price}
+                        handleClick= {() => dispatch(setIndividualPageItem(item))}
                     />
                 ))}
             </div>
